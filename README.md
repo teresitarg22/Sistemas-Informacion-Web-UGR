@@ -1,2 +1,3 @@
-# Sistemas-Informacion-Web-UGR
-Repositorio para las prácticas de Sistemas de Información Basados en Web de 3º de carrera de Ingenier
+## Sistemas-Informacion-Web-UGR
+
+Práctica final de Sistemas de Información Basados en Web de 3º de carrera de Ingeniería Informática. En esta práctica se realizó una web haciendo uso de docker compose y trabajando con HTML, CSS, PHP, JS, entre otros. Se llevó a cabo una web de científicos con diferentes tipos de usuarios (cada uno con unos permisos concretos), inicio de sesión, comentarios...
