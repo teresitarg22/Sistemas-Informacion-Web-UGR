@@ -1,0 +1,177 @@
+{% extends "padre.html" %}
+
+{% block estilo %}
+	{{ parent() }} <!-- Hacemos esto para que herede del padre el archivo css -->
+	<script src="../Recursos/comentarios.js"></script>
+	<script src="../Recursos/galeria.js"></script>
+{% endblock %}	
+
+{% block cuerpo %}
+	<!-- Sección que se mueve al activar el botón de los comentarios -->
+	<div id="seccion_fija">
+		<div class="columnaIzquierda">
+
+			{% block biografia %}
+				<!-- Biografia -->
+				<div class="biografia">
+					{% block logo_cientificos %}
+						<!-- Pequeño logo de ciencia -->
+						<img src='../Img/logo_ciencia.png' class='logoCiencia' />
+					{% endblock %}
+
+					<h1 class="titulo"> {{ cientifico['nombre'] }} </h1>
+					<h2 class="subtitulo"> {{ cientifico['fecha'] }} </h2> <br>
+					<p> {{ cientifico['biografia'] | nl2br }} </p>
+						
+					<!-- Apartado de frases enigmáticas del científico -->
+					<br><br> <h2 class="titulo_frases"> FRASES ENIGMÁTICAS DE {{ cientifico['nombre'] }} </h2> <br>
+	
+					<ul class="frases" id="frases">
+						{{ cientifico['frases'] | nl2br }} 
+					</ul>
+				</div>
+			{% endblock %}
+
+			<!-- Enlaces a páginas adicionales con más información -->
+
+			<div class="extra_enlaces">
+				<h2> ENLACES ADICIONALES DE {{ cientifico['nombre'] }} </h2> <br> <br>
+				<ul class="info">
+					{% for enlace in enlaces %}
+						<li><a href="{{ enlace['enlace'] }}"> {{ enlace['infoEnlace'] }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+
+			<!-- Galería de imágenes -->
+			
+			<h2 id="titulo_galeria"> GALERÍA DE FOTOS </h2>
+			<div class="galeria_fotos">
+				<div id="fotos">
+					{% for foto in galeria %}
+						<div id="foto_galeria">
+							<img src="{{ foto['foto'] }}">
+							{% if usuario['tipo'] == 'gestor' or usuario['tipo'] == 'superusuario' %}
+								<button class="eliminar-imagen" data-id="{{ foto['id'] }}">
+									<img src="../Img/Iconos/quitar.svg" alt="borrar" class="icono_borrar">
+								</button>
+							{% endif %}
+						</div>
+						<div id="piefoto_galeria">
+							<p>{{ foto['pieFoto'] }}</p>
+						</div>
+					{% endfor %}
+				</div>
+
+				<!-- Boton para pasar las imágenes -->
+				<button id="anterior"><<</button>
+				<button id="siguiente">>></button>
+			</div>
+
+			<div class="columna_hashtags">
+				<h2> HASHTAGS RELACIONADOS CON {{ cientifico['nombre'] }} </h2> <br> <br>
+				<ul class="info">
+					{% for hashtag in hashtags %}
+						<li> {{ hashtag['hashtag'] }} </li>
+					{% endfor %}
+				</ul>
+			</div>
+
+			<!-- Botones de gestión del científico: editar o borrar -->
+			{% if usuario['tipo'] == 'gestor' or usuario['tipo'] == 'superusuario' %}
+				<div class="menu_gestor_cientifico">
+				
+					<a href="../Controlador/configurar_cientifico.php?cientifico={{ cientifico['id'] }}"> 
+						<img src="../Img/Iconos/editar.svg" alt="Editar" class="iconos">
+					</a>
+				
+					<a href="../Controlador/eliminar_cientifico.php?cientifico={{ cientifico['id'] }}"> 
+						<img src="../Img/Iconos/borrar.svg" alt="Borrar" class="iconos">
+					</a>
+
+					{% if cientifico['publicado'] == 0 %}
+						<a href="../Controlador/publicar_cientifico.php?cientifico={{ cientifico['id'] }}"> 
+							<img src="../Img/Iconos/publicar.svg" alt="Publicar" class="iconos">
+						</a>
+					{% else %}	
+						<a href="../Controlador/publicar_cientifico.php?cientifico={{ cientifico['id'] }}"> 
+							<img src="../Img/Iconos/publicados.svg" alt="Despublicar" class="iconos">
+						</a>
+					{% endif %}
+					
+				</div>
+			{% endif %}
+			
+			<!-- Botones de redes sociales e imprimir -->
+			<div class="botones_sociales">
+				<a href="https://es-es.facebook.com/"><img src="/Img/logo_facebook.png" class="boton" /></a>
+				<a href="https://twitter.com/?lang=es"><img src="/Img/logo_twitter.png" class="boton" /></a>
+				<a href="../Vista/cientificos_imprimir.php?cientifico={{ cientifico['id'] }}"><img src="/Img/logo_impresora.png" class="boton" /></a>
+			</div>
+
+			{% if isLogged %}
+				<!-- Botón de comentarios -->
+				<button id="boton_comentarios">Comentarios</button>
+			{% endif %}
+
+		</div>
+
+		{{ parent() }}
+
+	</div>
+
+	<!-- Columna de comentarios que aparece tras darle al botón "comentarios" -->
+	<div id="columnaComentarios" class="columnaComentarios">
+		<div class="comentarios">
+			<h2 class="title">COMENTARIOS</h2>
+
+			<div class="zona_comentarios" id="zona_comentarios">
+				{% for comentario in comentarios %}
+					<!-- Le damos un ID único a cada comentario -->
+					<div class="comentario" id="comentario_{{ comentario['id'] }}">
+						<h2 class="autor"> {{ comentario['nombre'] }} </h2>
+						<h3 class="fechaHora"> {{ comentario['fecha'] }} {{ comentario['hora'] }}</h3>
+						<p> {{ comentario['comentario'] }} </p>
+
+						{% if usuario['tipo'] == 'moderador' or usuario['tipo'] == 'superusuario' %}
+							<div class="menu_comentarios">
+								<!-- Le damos un ID único a cada botón de cada comentario -->
+								<button id="borrar_comentario_{{ comentario['id'] }}" data-id="{{comentario['id']}}">
+									<img src="../Img/Iconos/borrar.svg" alt="borrar" class="icono_coment">
+								</button>
+
+								<button id="editar_comentario_{{ comentario['id'] }}" data-id="{{comentario['id']}}">
+									<img src="../Img/Iconos/editar.svg" alt="editar" class="icono_coment">
+								</button>
+
+								<!-- Al darle al botón de editar -->
+								<form class="form_edicion" data-id="{{comentario['id']}}" data-otro-id="{{cientifico['id']}}">
+									<textarea class="textarea_edicion" rows="2" cols="15" placeholder="Editar comentario..."></textarea>
+									<button type="submit" class="btn_guardar">Guardar</button>
+									<button type="button" class="btn_cancelar">Cancelar</button>
+								</form>
+
+							</div>
+						{% endif %}
+					</div>
+				{% endfor %}
+			</div>
+	
+			{% if isLogged %}
+				<!-- Formulario -->
+				<br> <h2 class="escribe_comentario">Escribe tu comentario </h2>
+
+				<form id="formulario" class="formulario">
+					<label for="nombre"> Nombre: </label>
+					<input type="text" id="nombre" name="nombre"> <br> <br>
+					<label for="email"> E-mail: </label>
+					<input type="text" id="email" name="email"> <br> <br>
+					<textarea id="comentario" name="comentario"></textarea> <br>
+					<button type="submit" id="enviar_comentario" data-id="{{ cientifico['id'] }}"> Enviar </button>
+				</form>
+			{% endif %}
+			
+		</div>
+	</div>
+	
+{% endblock %}

@@ -1,0 +1,1138 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    /* La imagen mantiene su relación de aspecto y dimensión dada. */
+    object-fit: cover;
+}
+
+/* -------------------- HEADER Y MENÚ ------------------- */
+
+.header em {
+    color: black;
+    text-align: center;
+    font-size: 3.8vw;
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header{
+    color: black;
+    text-align: center;
+    font-size: 1em;
+
+    /* Cabecera */
+    background-image: url("../Img/cabecera1.png");
+    background-size: 10rem;
+    min-height: 8em; /* Mínimo verticalmente */
+    height: 9vw;
+    width: auto;
+    position: relative;
+    background-position: center bottom;
+}
+
+.header .container{
+    display: flex;
+}
+
+.div, .header{
+    width: 100%;
+    font-size: 1em;
+}
+
+/* ---------------- */
+
+.menu{
+    font-size: 1.1vw;
+    text-align: center;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu a{
+	color: rgb(66, 66, 66);
+	background-color: rgba(235, 164, 98, 0.3); /* Naranja con un poco de opacidad */
+	text-decoration: none; /* Para quitar el subrayado de los enlaces */
+	padding: 12;
+	font-size: 2.5vh;
+}
+
+.menu a:hover{
+	background-color: rgb(240, 178, 122);
+}
+
+/* ---------------- */
+
+.logo_portada{
+    float: left;
+}
+
+.logotipo {
+    height: auto;
+    max-height: 90%;
+    border-radius: 50%;
+
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* --------------------- CUERPO Y COLUMNA IZQUIERDA------------------ */
+
+body{
+    background-image: url("../Img/fondo_blanco.jpg");
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ---------------- */
+
+.columnaIzquierda {
+    background-color: whitesmoke;
+    color: black;
+    padding: 1em;
+    display: grid;
+    float: left;
+    width: 75%;
+}
+
+.cientificos {
+    background-color: rgb(229, 231, 233);
+    padding: 1.8em; /* Bordes */
+    color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Reparto de columnas */
+    position: relative;
+
+    min-height: 25em;
+}
+
+.cientifico {
+    background-color: rgb(240, 178, 122);
+    display: block;
+    min-height: 150px;
+    min-width: 150px;
+    height: 70%;
+    width: 80%;
+    padding: 0.8em; /* Bordes */
+    margin: 1em; /* Márgenes laterales */
+    font-size: 0.9vw;
+    float: left;
+    text-align: center;
+    border-radius: 3%;
+}
+
+.cientifico:hover{
+	background-color: rgb(235, 152, 78);
+    border-radius: 3%;
+}
+
+.foto_cientifico {
+    width: 75%;
+    height: 80%;
+    border-radius: 35%;
+}
+
+/* ---------------- */
+
+.logoCiencia{
+    width: 10%;
+    float: left;
+    margin-left: 1.8em;
+}
+
+.titulo{
+	margin-left: 4em;
+    margin-top: 1em;
+}
+
+.subtitulo{
+	margin-left: 5.4em;
+}
+
+/* ---------------- */
+
+.biografia{
+	text-align: justify;
+    float: left;
+    padding: 1em;
+
+}
+
+.biografia p{
+	margin-right: 2.5em;
+	margin-left: 2.5em;
+}
+
+/* -------- GALERIA DE IMAGENES -------- */
+
+.galeria_fotos{
+    width: 70%;
+    height: 31.25em;
+    margin: 3.125em auto;
+    position: relative;
+
+    background-color: rgb(236, 236, 236);
+    border: 5px solid rgb(250, 229, 211);
+    border-radius: 3%;
+}
+
+#titulo_galeria{
+    text-align: center;
+    float: left;
+	color: rgb(242, 172, 110);
+}
+
+.galeria_fotos img{
+    max-width: 25em;
+    max-height: 25em;
+    justify-content: center;
+    margin-top: 1em;
+    display: flex;
+
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4%;
+}
+
+#piefoto_galeria{
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    text-align: center;
+    background-color: rgba(81, 81, 81, 0.64);
+}
+
+/* ---------- */
+
+.galeria_fotos button{
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    background-color: rgb(250, 229, 211);
+    font-size: 16px;
+}
+
+#anterior {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-70%);
+}
+
+#siguiente {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-70%);
+}
+
+/* ---------------- */
+
+.frases li{
+	padding: 0.5em;
+	margin-left: 5em;
+	margin-right: 2.5em;
+}
+
+.titulo_frases{
+    margin-left: 1.5em;
+}
+
+.extra_enlaces {
+    margin: 0 auto; /* Esto centra el contenedor horizontalmente */
+    max-width: 50em;
+    justify-content: center; /* Esto centra el contenido dentro del contenedor */
+    padding: 2em;
+}
+
+.extra_enlaces h2{
+    clear: both;
+    justify-content: center;
+	font-size: 1.1em;
+	color: rgb(235, 152, 78);
+}
+
+.info{
+    margin-left: 2em;
+}
+
+.info li{
+    margin-left: 1em;
+    padding: 0.3em;
+}
+
+.info a{
+    margin-left: 0.5em;
+    background-color: rgba(235, 164, 98, 0.3);
+	text-decoration: none;
+	color: black;
+}
+
+/* ---------------- */
+
+.botones_sociales{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clear: both;
+    padding: 2em;
+    margin-top: 1em;
+    grid-template-columns: 2fr 2fr 2fr;
+}
+
+.boton{
+    width: 5em;
+    padding: 0.9em;
+}
+
+#boton_comentarios{
+    float: right;
+    background-color: rgb(250, 229, 211);
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* ----------------- COLUMNA DERECHA ----------------- */
+
+.columnaDerecha{
+	float: left;
+	width: 25%;
+	padding: 0.5em;
+}
+
+.enlaces_interes {
+	background-color: whitesmoke;
+    padding: 1em;
+}
+
+.enlaces_interes h2{
+	text-align: center;
+}
+
+.enlaces_interes a{
+	text-decoration: none;
+	text-align: center;
+	color: rgb(235, 152, 78);
+	font-size: 18px;
+}
+
+.enlace {
+    background-color: white;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.enlace p{
+	text-align: justify;
+}
+
+.enlace:hover{
+	background-color: rgb(250, 229, 211);
+}
+
+/* ----------------- COMENTARIOS ----------------- */
+
+.columnaComentarios{
+    width: 20%;
+    float: right;
+    padding: 0.5em;
+    display: none;
+    /* position: fixed; */
+    transition: right;
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 1.2em;
+}
+
+.comentarios{
+    background-color: rgb(252, 240, 229);
+    padding: 1em;
+}
+
+.comentario{
+    text-align: justify;
+    background-color: white;
+    padding: 10px;
+    margin-top: 10px;
+    padding: 1em;
+    border-radius: 5%;
+
+    max-height: 15em;
+    transition: max-height 0.3s ease;
+}
+
+.comentario.active {
+    max-height: none; /* Eliminamos la altura máxima para que el contenedor se adapte al contenido */
+}
+
+.comentario:hover{
+    border-width: 2px;
+    border-color: rgb(235, 152, 78);
+    border-style: dashed;
+}
+
+.autor{
+    color:rgb(235, 152, 78);
+    font-size: large;
+    margin-bottom: 0.2em;
+}
+
+.fechaHora{
+    color: rgb(240, 178, 122);
+    font-size: medium;
+    margin-bottom: 0.4em;
+}
+
+.columnaComentarios::after{
+    clear: both;
+}
+
+
+
+/* ---------------- */
+
+.escribe_comentario{
+    margin-top: 4em;
+    margin-left: 1.1em;
+    font-size: large;
+}
+
+#comentario{
+    margin-left: 1.1em;
+}
+
+.formulario{
+    margin-left: 0.4em;
+    margin-top: 2em;
+    margin-bottom: 4em;
+}
+
+.formulario label{
+    border-radius: 5%;
+}
+
+.formulario input{
+    border-radius: 5%;
+}
+
+.formulario button{
+    margin-top: 1.3em;
+    background-color: rgb(252, 217, 185);
+    border: none;
+    padding: 0.5em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    margin-right: 1.1em;
+    float: right;
+}
+
+/* ----------------- MENÚ COMENTARIOS ----------------- */
+
+.menu_comentarios {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 14em;
+    max-height: 3em;
+}
+
+.menu_comentarios button {
+    display: flex;
+    align-items: center;
+
+    color: rgb(66, 66, 66);
+    background-color: rgba(235, 164, 98, 0.3);
+    text-decoration: none;
+    padding: 0.8em;
+    font-size: 1.5vh;
+    margin-top: 0.8em;
+    margin-bottom: 0.3em;
+    margin-right: 0.5em;
+}
+
+.icono_coment {
+    width: 1em; /* Tamaño del icono */
+    height: 1em;
+}
+
+/* ----------------- EDICIÓN COMENTARIOS ----------------- */
+
+.form_edicion{
+    display: none;
+}
+
+.form_edicion.active {
+    display: block; /* Mostramos el formulario de edición cuando tenga la clase 'active' */
+}
+
+.form_edicion textarea{
+    margin-top: 0.3em;
+}
+
+.form_edicion button{
+    display: flex;
+}
+
+/* ----------------- LOGIN Y REGISTRO ----------------- */
+
+.error {
+    color:red;
+    padding: 20px;
+}
+
+.inicio {
+    margin: auto;
+    width: 50%;
+    height: 90%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(255, 239, 224, 0.523);
+    border-radius: 5%;
+    border: 2px double rgb(246, 200, 161);
+
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+}
+
+.inicio h1 {
+    color: rgb(210, 139, 77);
+    padding: 1em;
+}
+
+.titulo_registro{
+    position: relative;
+    top: 1.5%;
+}
+
+.inicio p{
+    color: rgb(93, 93, 93);
+    margin-top: 2.5em;
+    font-size: 1.8vh;
+}
+
+/* ---------------- */
+
+.inicio form {
+    flex-direction: column;
+    align-items: center;
+}
+
+.input{
+    width: 80%;
+    padding: 0.5em;
+}
+
+.input .iconos_form{
+    margin-bottom: 0.2em;
+    margin-right: 0.2em;
+}
+
+/* ---------------- */
+
+.iconos_inicio {
+    position: relative;
+    width: 18vh;
+    padding: 0.5em;
+    transform: translate(19%, 30%);
+}
+
+.circulo {
+    display: inline-block;
+    position: relative;
+    width: 25vh;
+    height: 25vh;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.circulo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.iconos_form{
+    position: relative;
+    transform: translate(19%, 30%);
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 0.5em;
+    object-fit: contain; /* Para que se ajusten al tamaño */
+}
+
+
+/* ----------------- PERFIL DE USUARIO ----------------- */
+
+.usuario {
+    background-color: #f5f5f5;
+    padding: 5vh;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.usuario h1 {
+    color: #e0893c;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1.3em;
+}
+
+.info_usuario{
+    display: flex;
+    position: relative;
+    left: 40%;
+    flex-direction: column;
+    justify-content: center;
+    height: 35vh; /* Ajusta la altura según tus necesidades */
+    margin-bottom: 2em;
+
+    max-width: 20em;
+    max-height: 30em;
+}
+
+.usuario p, .usuario label {
+    margin-bottom: 10px;
+}
+
+.usuario label {
+    color: #999;
+}
+
+.usuario strong{
+    margin-right: 0.8em;
+    color: #eb984e;
+}
+
+/* ---------------- */
+
+.boton_perfil {
+    background-color: #fae5d3;
+    padding: 15px 32px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.boton_perfil a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.boton_perfil :hover {
+    background-color: #f9d0ad;
+}
+
+#guardar{
+    background-color: #ffefe0;
+    padding: 0.7em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ----------------- MENÚ INICIO Y CIERRE ----------------- */
+
+.menu_login {
+    background-color: rgba(235, 164, 98, 0.3);
+    padding: 0.8em;
+    text-align: center;
+    position: absolute;
+    top: 8%;
+    right: 1%;
+
+    text-decoration: none;
+    color: rgb(66, 66, 66);
+    font-size: 2.5vh;
+}
+
+.menu_login:hover{
+	background-color: rgb(240, 178, 122);
+}
+
+#loguearse{
+    border: none;
+    padding: 0.5em;
+    text-align: center;
+    background-color: rgb(216, 155, 102);
+    color: #f5f5f5;
+    font-size: 2.1vh;
+
+    margin-top: 1em;
+}
+
+#boton_registro{
+    border: none;
+    padding: 0.5em;
+    text-align: center;
+    background-color: rgb(216, 155, 102);
+    color: #f5f5f5;
+    font-size: 2.1vh;
+
+    margin-top: 1em;
+}
+
+#registro{
+    border: none;
+    padding: 0.5em;
+    text-align: center;
+    background-color: rgb(216, 155, 102);
+    color: #f5f5f5;
+    font-size: 2.1vh;
+
+    margin-top: 2.8em;
+}
+
+
+/* ----------------- MENÚ GESTOR PORTADA ----------------- */
+
+.menu_gestor {
+    display: flex;
+    position: absolute;
+    top: 90%;
+    left: 3.5%;
+
+    max-width: 35em;
+    max-height: 2em;
+
+    font-size: 1.1vw;
+    margin-bottom: 0.5em;
+}
+
+.menu_gestor_boton{
+    max-width: 16em;
+    margin-right: 1em;
+}
+
+.menu_gestor a {
+    align-items: center;
+
+    color: rgb(66, 66, 66);
+    background-color: rgba(235, 164, 98, 0.3);
+    text-decoration: none;
+    padding: 0.8em;
+    font-size: 2.2vh;
+}
+
+.menu_gestor a:hover {
+    background-color: rgb(240, 178, 122);
+}
+
+.icono {
+    width: 1em; /* Tamaño del icono */
+    height: 1em;
+    margin-right: 1em; /* Espacio entre el icono y el texto */
+    fill: #e0893c; /* Color del icono */
+}
+
+.botones{
+    border: none;
+    padding: 0.5em;
+    text-align: center;
+    background-color: rgb(216, 155, 102);
+    color: #f5f5f5;
+    font-size: 2.1vh;
+}
+
+/* ----------------- MENÚ GESTOR CIENTIFICOS ----------------- */
+
+.menu_gestor_cientifico{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clear: both;
+
+    grid-template-columns: 2fr 2fr;
+    max-width: 2em;
+    max-height: 2em;
+    margin-left: 4em;
+}
+
+.menu_gestor_cientifico a {
+    color: rgb(66, 66, 66);
+    background-color: rgba(235, 164, 98, 0.3);
+    text-decoration: none;
+
+    padding: 0.8em;
+    font-size: 2.2vh;
+    margin-left: 1em;
+}
+
+.menu_gestor_cientifico a:hover {
+    background-color: rgb(240, 178, 122);
+}
+
+.opcion{
+    padding: 0.2em;
+}
+
+.iconos {
+    width: 1em; /* Tamaño del icono */
+    height: 1em;
+    fill: #e0893c; /* Color del icono */
+}
+
+/* ----------------- DISEÑO ----------------- */
+
+.cuerpo::after{
+	content: "";
+  	display: table;
+  	clear: both;
+}
+
+@media screen and (max-width: 800px) {
+  .columnaIzquierda, .columnaDerecha {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* ----------------- PIE DE PÁGINA ----------------- */
+
+.piePagina{
+	border: 2px black;
+    text-align: center;
+    font-size: medium;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(229, 231, 233);
+}
+
+/* ----------------- LISTA CIENTÍFICOS ----------------- */
+
+.listado {
+    background-color: #f5f5f5;
+    padding: 5vh;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.listado h1 {
+    color: #e0893c;
+    font-size: 2em;
+    text-align: center;
+}
+
+#lista-cientificos {
+    list-style-type: none;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    left: 40%;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2em;
+
+    max-width: 20em;
+    max-height: 30em;
+}
+  
+#lista-cientificos li {
+    text-indent: 2em; 
+    margin-bottom: 10px; 
+    margin-left: 1em;
+}
+
+#lista-cientificos li::before {
+    content: "•"; /* Punto para cada elemento */
+    position: absolute;
+    left: 0;
+    margin-left: -1.5em; 
+}
+
+#lista-cientificos li a {
+    text-decoration: none;
+    color: rgb(66, 66, 66);
+    font-size: 2vh;
+}
+
+/* ------------ */
+
+.buscar{
+    margin-top: 10em;;
+    position: absolute;
+    top: 0;
+    right: 2%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    
+}
+
+#boton-buscar{
+    border: none;
+    padding: 0.7em;
+    background-color: rgb(216, 155, 102);
+    color: #f5f5f5;
+    font-size: 2.1vh;
+}
+
+#boton-buscar img{
+    position: relative;
+    transform: translate(50%, 0%);
+}
+
+.encontrado {
+    background-color: rgba(240, 177, 122, 0.79);
+}
+
+/* ----------------- LISTA USUARIOS ----------------- */
+
+#lista-usuarios {
+    list-style-type: none;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    left: 40%;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2em;
+
+    max-width: 20em;
+    max-height: 30em;
+}
+  
+.lista_usuarios table {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+  
+.lista_usuarios th, .lista_usuarios td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+  
+.lista_usuarios th {
+    background-color: rgba(255, 229, 206, 0.558);
+}
+
+.tabla-usuarios td {
+    position: relative;
+    width: auto; /* Ancho de la columna de datos */
+}
+
+.icono_tabla{
+    width: 1.5em;
+}
+
+td button {
+    background-color: #f9d0ada2;
+    padding: 0.3em;
+}
+
+/* ---------------- */
+
+.menu_lista{
+    position: absolute;
+    top: 50%;
+    right: 1%;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+.menu_lista a {
+    align-items: center;
+
+    color: rgb(66, 66, 66);
+    background-color: rgba(235, 164, 98, 0.549);
+    text-decoration: none;
+    padding: 0.8em;
+    font-size: 2.2vh;
+}
+
+.menu_lista a:hover {
+    background-color: rgb(240, 178, 122);
+}
+
+.icono_listado{
+    position: relative;
+    transform: translate(20%, 25%);
+    width: 1.5em; /* Tamaño del icono */
+    height: 1.5em;
+    margin-right: 1em; /* Espacio entre el icono y el texto */
+}
+
+/* ---------------- */
+
+.menu_despegable {
+    display: none;
+}
+
+.menu_despegable_container {
+    position: relative;
+    z-index: 10;
+
+    width: auto;
+    height: auto;
+}
+
+.menu_despegable.mostrar {
+    display: flex;
+    width: auto;
+    max-width: 8em;
+
+    position: relative;
+    transform: translate(-80%, -35%);
+    z-index: 10;
+    top: 3%;
+    left: 65%;
+
+    flex-direction: column;
+    background-color: #d5d5d5d4;
+    padding: 5px;
+}
+
+.menu_despegable a {
+    text-decoration: none;
+    color: #333;
+}
+
+.menu_despegable a:hover {
+    background-color: rgba(182, 182, 182, 0.623);
+}
+
+/* ----------------- COLUMNA HASHTAGS ----------------- */
+
+.columna_hashtags {
+    margin: 0 auto; /* Esto centra el contenedor horizontalmente */
+    max-width: 50em; 
+    justify-content: center; /* Esto centra el contenido dentro del contenedor */
+    padding: 2em;
+}
+
+.columna_hashtags h2{
+    clear: both;
+    justify-content: center;
+	font-size: 1.1em;
+	color: rgb(235, 152, 78);
+}
+
+.columna_hashtags .info{
+    margin-left: 2em;
+    list-style-type: none;
+}
+
+/* ----------------- EDICIÓN GALERIA ----------------- */
+
+.eliminar-imagen {
+    position: absolute;
+    top: 0%;
+    right: 0;
+    display: flex;
+    align-items: center;
+    
+    width: 4em;
+    height: 5em;
+}
+
+.icono_borrar{
+    width: 1.1em; /* Tamaño del icono */
+    height: 1.1em;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+.resultados {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    list-style-type: none; /* Eliminar los puntos del listado */
+    margin: 0; /* Eliminar el espacio entre elementos */
+}
+
+.resultados li {
+    padding: 5px 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc; /* Agregar una línea divisora entre elementos */
+}
+
+.resultados li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.resultados li:last-child {
+    border-bottom: none; /* Eliminar la línea divisora en el último elemento */
+}
+
+.resultados li:hover {
+    background-color: rgb(250, 213, 180);
+}
+
+.resaltado {
+    background-color: rgb(237, 171, 114);
+}
+
+.buscar_cientificos {
+    padding: 0.8em;
+    position: absolute;
+    top: 8%;
+    right: 10%;
+    left: 70%;
+    z-index: 2;
+}
+
+.buscar_cientificos .input{
+    width: 90%;
+    padding: 0.5em;
+}
+
+.icono_busqueda{
+    border: none;
+    padding: 0.5em;
+    background-color: rgb(240, 178, 122);
+    color: #f5f5f5;
+    font-size: 2.1vh;
+    width: 2.4em; 
+    height: 2.4em;
+    margin-right: 1em;
+    position: absolute;
+    transform: translate(-110%, 0%);
+}

@@ -1,0 +1,57 @@
+{% extends "padre.html" %}
+
+{% block estilo %}
+	{{ parent() }} <!-- Hacemos esto para que herede del padre el archivo css -->
+	<script src="../Recursos/usuarios.js"></script>
+{% endblock %}	
+
+{% block cuerpo %}
+	<div class="listado">
+		<div class="lista_usuarios">
+            <h1>USUARIOS DEL SISTEMA</h1>
+            <br><br>
+            <table id="tabla-usuarios">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Edición de rol</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in usuarios %}
+                        <tr>
+                            <td class="nombre-usuario">{{ user['nombre'] }}</td>
+                            <td class="tipo-usuario" data-original-rol="{{ user['tipo'] }}">{{ user['tipo'] }}</td>
+                            <td>
+                                {% if usuario['tipo'] == 'superusuario' %}
+                                    <div class="menu_despegable_container">
+                                        <button class="menu_despegable_btn">
+                                            <img src="../Img/Iconos/editar.svg" alt="Añadir" class="icono_tabla">
+                                        </button>
+                                        <div class="menu_despegable">
+                                            <a href="#"> superusuario </a>
+                                            <a href="#"> gestor </a>
+                                            <a href="#"> moderador </a>
+                                            <a href="#"> registrado </a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+		
+		<div class="buscar">
+			<input type="text" id="campo-busqueda" placeholder="Buscar usuario..." class="input">
+	
+			<button id="boton-buscar">
+				<img src="../Img/Iconos/lupa.svg" alt="editar" class="icono">
+			</button>
+		</div>
+		
+	</div>
+{% endblock %}

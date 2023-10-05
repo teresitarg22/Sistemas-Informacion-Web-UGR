@@ -1,0 +1,35 @@
+{% extends "padre.html" %}
+
+{% block cuerpo %}
+
+	<!-- Columna izquerda, matriz de científicos con sus respectivas fotos -->
+	<div class="usuario">
+		<h1> CONFIGURACIÓN DEL PERFIL </h1><br>
+		<div class="info_usuario">
+			<form action="configuracion.php" method="post">
+				<label for="nombre"> Nombre: </label>
+				<input type="text" name="nombre" value="{{ usuario['nombre'] }}"><br><br>
+				<label for="apellidos"> Apellidos: </label>
+				<input type="text" name="apellidos" value="{{ usuario['apellidos'] }}"><br><br>
+				<label for="correo"> Correo: </label>
+				<input type="text" name="correo" value="{{ usuario['correo'] }}"><br><br>
+				<label for="telefono"> Teléfono: </label>
+				<input type="text" name="telefono" value="{{ usuario['telefono'] }}"><br><br>
+				<label for="direccion"> Dirección: </label>
+				<input type="text" name="direccion" value="{{ usuario['direccion'] }}"><br><br>
+				<label for="ciudad"> Ciudad: </label>
+				<input type="text" name="ciudad" value="{{ usuario['ciudad'] }}"><br><br>
+				<label for="pais"> País: </label>
+				<input type="text" name="pais" value="{{ usuario['pais'] }}"><br><br>
+				<label for="cp"> Código postal: </label>
+				<input type="text" name="cp" value="{{ usuario['cp'] }}"><br><br>
+				<input type="submit" id="guardar" value="Guardar cambios">
+			</form>
+		</div>
+		<br><br>
+		<div class="boton_perfil">
+			<a href="../Vista/usuarios.php"> Finalizar </a>
+		</div>
+	</div>
+		
+{% endblock %}

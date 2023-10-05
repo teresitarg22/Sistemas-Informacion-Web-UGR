@@ -1,0 +1,28 @@
+{% extends "padre.html" %}
+
+{% block cuerpo %}
+
+	<!-- Columna izquerda, matriz de científicos con sus respectivas fotos -->
+	<div class="usuario">
+		<h1> AÑADIR CIENTÍFICO </h1><br>
+		<form action="añadir_cientifico.php" method="post">
+			<label for="nombre"> Nombre: </label>
+			<input type="text" name="nombre" value="{{ cientifico['nombre'] }}"><br><br>
+			<label for="fecha"> Fecha: </label>
+			<input type="text" name="fecha" value="{{ cientifico['fecha'] }}"><br><br>
+			<label for="biografia"> Biografia: </label>
+			<textarea name="biografia" rows="30" cols="90"> {{ cientifico['biografia'] }} </textarea><br><br>
+
+			<!-- <input type="text" name="biografia" value="{{ cientifico['biografia'] }}"><br><br> -->
+			<label for="frases"> Frases: </label>
+			<!-- <input type="text" name="frases" value="{{ cientifico['frases'] }}"><br><br> -->
+			<textarea name="frases" rows="15" cols="90"> {{ cientifico['frases'] }} </textarea><br><br>
+			<input type="submit" value="Guardar cambios" class="botones">
+		</form>
+		<br><br>
+		<div class="boton_perfil">
+			<a href="../Vista/portada.php"> Finalizar </a>
+		</div>
+	</div>
+		
+{% endblock %}

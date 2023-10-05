@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>
+            CIENTÍFICOS
+        </title>
+		{% block estilo %}
+			<link rel="stylesheet" href="../Recursos/estilos.css">
+		{% endblock %}
+        
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+ 
+	    <div class="header">
+			<!-- Cabecera de la página, logo principal y título -->
+			<h1>
+				<div class="logo_portada">
+					{% block logo %}
+						<img src='../Img/logo.jpg' class='logotipo'/>
+					{% endblock %}
+				</div>
+				
+				<em> CIENTÍFICOS </em> 
+			</h1>
+
+			{% block menu %}
+				<!-- Menú principal de navegación -->
+				<nav class="menu">
+					<a href="../Vista/portada.php" class="menu_link"> Inicio</a>
+					<a href="../Vista/portada.php" class="menu_link"> Sobre Nosotros</a>
+					<a href="../Vista/usuarios.php" class="menu_link"> Perfil</a>
+				</nav>
+			{% endblock %}
+
+			{% block menu_login %}
+			
+				<!-- Menú de inicio y cierre de sesión -->
+				{% if isLogged %}
+					<a href="logout.php" class="menu_login">Cerrar sesión</a>
+				{% else %}
+					<a href="login.php" class="menu_login">Iniciar sesión</a>
+				{% endif %}
+
+			{% endblock %}
+			
+		</div>
+
+		<div class="cuerpo">
+			{% block cuerpo %}
+
+				{% block enlacesInteres %}
+					<!-- Columna derecha, zona de enlaces de interés -->
+					<div class="columnaDerecha">
+						<div class="enlaces_interes">
+								<h2> ENLACES DE INTERÉS: </h2> <br>
+								
+								<div class=enlace>
+								<a href="https://psicologiaymente.com/cultura/cientificos-mas-famosos-historia" class="links">
+										Los 30 científicos más famosos de la historia. </a>
+										<!-- Breve descripción de la página -->
+								<p> <br> La ciencia ha sido lo que ha permitido que el mundo sea como lo es hoy en día, y ésta nunca se habría producido de la forma en cómo lo ha hecho sin la aparición de grandes mentes. <br> <br> Vamos a conocer a los 30 científicos más destacables de la historia.</p>
+								</div>
+								
+								<div class=enlace>
+									<a href="https://www.kids.csic.es/cientificos/biografias.html" class="links">
+										Grandes científicos. </a>
+										<!-- Breve descripción de la página -->
+								<p> <br> Aprende sobre los personajes más importantes de la historia de la ciencia de la forma más divertida. </p>
+								</div>
+									
+								<div class=enlace>
+									<a href="https://www.nationalgeographic.com.es/ciencia/los-10-cientificos-mas-influyentes-de-2022_19231" class="links"> 
+										Los 10 científicos más influyentes de 2022. </a>
+										<!-- Breve descripción de la página -->
+									<p> <br> La prestigiosa revista Nature acaba de dar a conocer la lista anual que reconoce a algunas de las personas que han desempeñado un papel fundamental en la ciencia en 2022. </p>
+								</div>
+								
+							<div class=enlace>
+								<a href="https://www.fundacionaquae.org/wiki/descubrimientos-cientificos-del-siglo-xxi/" class="links">
+										Los descubrimientos científicos del siglo XXI más importantes. </a>
+										<!-- Breve descripción de la página -->
+								<p> <br>  Hay logros científicos que no pueden pasar desapercibidos. Repasamos los 10 descubrimientos científicos del siglo XXI que cambiarán el curso de la historia. <br> <br> Las aplicaciones de algunos de ellos todavía son objeto de estudio, pero pueden suponer cambios en la vida tal y como la conocemos. </p>
+							</div>
+						</div>
+					</div>
+				{% endblock %}
+
+			{% endblock %}
+        </div>
+       
+		<!-- Pie de página -->
+        <div class="piePagina">
+                <p> <br> © 2023 <br> <br> Mario y Teresa <br> </p>
+        </div>
+ 
+	</body>
+</html>

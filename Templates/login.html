@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>
+        CIENTÍFICOS
+    </title>
+    <link rel="stylesheet" href="../Recursos/estilos.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  
+  <body>
+    {% if error is defined %}
+      <div class="error">{{ error }}</div>
+      <br> <br>
+    {% endif %}
+
+    <div class="inicio">
+      <h1> INICIO DE SESIÓN </h1>
+
+      <div class="circulo">
+        <img src="../Img/Iconos/usuarios.svg" alt="usuarios" class="iconos_inicio">
+      </div>
+
+      <br>
+      <form action="login.php" method="post">
+        <label>
+          <img src="../Img/Iconos/usuario.svg" alt="usuarios" class="iconos_form">
+          <input type="text" name="nick" placeholder="Usuario" class="input"/>
+        </label><br>
+        <label>
+          <img src="../Img/Iconos/candado.svg" alt="candado" class="iconos_form">
+          <input type="password" name="contraseña" placeholder="Contraseña" class="input" />
+        </label><br>
+        <input type="submit" value="Loguearse" id="loguearse" />
+      </form>
+
+      <p>¿Aún no estás registrado?</p>
+      <button id="boton_registro" onclick="window.location.href='../Vista/registro.php'">Registrate aquí</button>
+    </div>
+
+  </body>
+
+</html>
+

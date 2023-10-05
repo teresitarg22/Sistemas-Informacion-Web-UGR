@@ -1,0 +1,47 @@
+{% extends "padre.html" %}
+
+{% block cuerpo %}
+
+	<!-- Columna izquerda, matriz de científicos con sus respectivas fotos -->
+	<div class="usuario">
+		{% for e in errores %}
+			<p style="color: #f00;">{{e}}</p>
+		{% endfor %}
+
+		<h1> CONFIGURACIÓN DEL CIENTÍFICO </h1><br>
+		<form action="configurar_cientifico.php?cientifico={{ cientifico['id'] }}" method="post">
+			<label for="nombre"> Nombre: </label>
+			<input type="text" name="nombre" value="{{ cientifico['nombre'] }}"><br><br>
+			<label for="fecha"> Fecha: </label>
+			<input type="text" name="fecha" value="{{ cientifico['fecha'] }}"><br><br>
+			<label for="biografia"> Biografia: </label>
+			<textarea name="biografia" rows="30" cols="90"> {{ cientifico['biografia'] }} </textarea><br><br>
+			<label for="frases"> Frases: </label>
+			<textarea name="frases" rows="15" cols="90"> {{ cientifico['frases'] }} </textarea><br><br>
+			<label for="hashtags"> Hashtags: </label>
+			<textarea name="hashtags" rows="15" cols="90">
+				{% for hashtag in hashtags %}
+					{{ hashtag['hashtag'] ~ ' ' }}
+				{% endfor %}
+			</textarea><br><br>
+			<input type="submit" value="Guardar cambios" class="botones">
+		</form>
+		<br><br>
+
+		{% if imagen %}
+			<p>La imagen está guardada en <a href="{{imagen}}">{{imagen}}</a>.</p> 
+			<img src="{{imagen}}" />
+		{% else %}
+			<form action="añadir_imagen.php?cientifico={{ cientifico['id'] }}" method="post" enctype="multipart/form-data">
+				Imagen a subir: <input type="file" name="imagen" /><br>
+				<input type="submit" value="Mandar imagen" class="botones"/>
+			</form>
+		{% endif %}
+		<br><br>
+
+		<div class="boton_perfil">
+			<a href="../Vista/cientificos.php?cientifico={{ cientifico['id'] }}"> Finalizar </a>
+		</div>
+	</div>
+		
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "cientificos.html" %}
+
+{% block estilo %}
+	<link rel="stylesheet" href="../Recursos/estilos_imprimir.css">
+{% endblock %}	
+
+{% block logo %}
+	<img src='../Img/logo-byn.png' class='logotipo'/>
+{% endblock %}
+
+{% block menu %}
+	<!-- Lo dejo vacío para que no tenga menú -->
+{% endblock %}
+
+
+{% block cuerpo %}
+
+	{% block biografia %}
+		<!-- Hereda la información de la biogracía del padre -->
+		{{ parent() }}
+	{% endblock %}
+
+{% endblock %}
+
+{% block logo_cientificos %}
+	<!-- Pequeño logo de ciencia en blanco y negro -->
+	<img src='../Img/logo_ciencia-byn.png' class='logoCiencia' />
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "padre.html" %}
+
+{% block cuerpo %}
+
+	<!-- Columna izquerda, matriz de científicos con sus respectivas fotos -->
+	<div class="usuario">
+		<h1> PERFIL DE USUARIO </h1>
+
+		<!-- Datos principales del usuario: -->
+		<div class="info_usuario">
+			<p><strong>Nombre de usuario:</strong> {{ usuario['nombre_usuario'] }}</p>
+			<p><strong>Tipo de usuario:</strong> {{ usuario['tipo'] }}</p>
+			<p><strong>Nombre:</strong> {{ usuario['nombre'] }}</p>
+			<p><strong>Apellidos:</strong> {{ usuario['apellidos'] }}</p>
+			<p><strong>Correo:</strong> {{ usuario['correo'] }}</p>
+			<p><strong>Teléfono:</strong> {{ usuario['telefono'] }}</p>
+			<p><strong>Dirección:</strong> {{ usuario['direccion'] }}</p>
+			<p><strong>Ciudad:</strong> {{ usuario['ciudad'] }}</p>
+			<p><strong>País:</strong> {{ usuario['pais'] }}</p>
+			<p><strong>Código postal:</strong> {{ usuario['cp'] }}</p>
+		</div>
+
+		<div class="boton_perfil">
+			<a href="../Controlador/configuracion.php"> Configurar perfil </a>
+		</div>
+	</div>
+		
+{% endblock %}

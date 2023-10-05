@@ -1,0 +1,127 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* -------------------- HEADER Y MENÚ ------------------- */
+
+.header h1 {
+    color: black;
+    text-align: center;
+    font-size: 4vw;
+}
+
+.header{
+    color: black;
+    text-align: center;
+    font-size: 1em;
+
+    /* Cabecera */
+    background-size: 10rem;
+    min-height: 80px; /* Mínimo verticalmente */
+    height: 8vw;
+    width: auto;
+    position: relative;
+}
+
+.header .container{
+    display: block;
+}
+
+.div, .header{
+    width: 100%;
+    font-size: 1em;
+}
+
+/* ---------------- */
+
+.logotipo {
+    height: 100%;
+    border-radius: 50%;
+    float: center;
+}
+
+/* --------------------- CUERPO Y COLUMNA IZQUIERDA------------------ */
+
+body{
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ---------------- */
+
+.logoCiencia{
+	width: 7%;
+    float: left;
+    margin-left: 1.8em;
+}
+
+.titulo{
+	margin-left: 4em;
+}
+
+.subtitulo{
+	margin-left: 5.4em;
+}
+
+/* ---------------- */
+
+.biografia{
+	
+	text-align: justify;
+	float: left;
+    padding: 1em;
+    font-family: 'Perpetua';
+   
+    margin-right: 2em;
+	margin-left: 2em;
+}
+
+.biografia p{
+	margin-right: 1.5em;
+	margin-left: 1.5em;
+}
+
+/* ---------------- */
+
+.frases li{
+	padding: 0.5em;
+	margin-left: 2em;
+	margin-right: 1.5em;
+}
+
+/* ----------------- DISEÑO ----------------- */
+
+.cuerpo::after{
+	content: "";
+  	display: table;
+  	clear: both;
+    color: black;
+}
+
+.columnas{
+	content: "";
+  	display: table;
+  	clear: both;
+}
+
+@media screen and (max-width: 800px) {
+  .columnaIzquierda, .columnaDerecha {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* ----------------- PIE DE PÁGINA ----------------- */
+
+.piePagina{
+	border: 2px black;
+    text-align: center;
+    font-size: medium;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+

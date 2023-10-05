@@ -1,0 +1,89 @@
+{% extends "padre.html" %}
+
+{% block estilo %}
+	{{ parent() }} <!-- Hacemos esto para que herede del padre el archivo css -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<script src="../Recursos/usuarios.js"></script>
+{% endblock %}	
+
+{% block menu_login %}
+
+	{{ parent() }}
+
+	<div class="buscar_cientificos">
+		<img src="../Img/Iconos/lupa.svg" alt="editar" class="icono_busqueda">
+		<input type="text" id="campo-busqueda" placeholder="Buscar científico..." class="input">
+		<ul id="resultados" class="resultados"></ul>
+	</div>
+
+	{% if usuario['tipo'] == 'superusuario' %}
+		<div class="menu_lista">
+			<a href="../Vista/listado_usuarios.php"> 
+				<img src="../Img/Iconos/listado.svg" alt="listado" class="icono_listado">
+				Listado de usuarios
+			</a>
+		</div>
+	{% endif %}
+
+{% endblock %}
+
+{% block cuerpo %}
+	<!-- Columna izquerda, matriz de científicos con sus respectivas fotos -->
+	<div class="columnaIzquierda">
+		<div class="cientificos">
+
+			{% if usuario['tipo'] == 'gestor' or usuario['tipo'] == 'superusuario' %}
+				<div class="menu_gestor">
+					<div class="menu_gestor_boton">
+						<a href="../Controlador/añadir_cientifico.php">
+							<img src="../Img/Iconos/añadir.svg" alt="Añadir" class="icono">
+							Añadir científico
+						</a>
+					</div>
+
+					<div class="menu_gestor_boton">
+						<a href="../Vista/listado_cientificos.php">
+							<img src="../Img/Iconos/listado.svg" alt="Añadir" class="icono">
+							Listado de científicos
+						</a>
+					</div>
+
+					<div class="menu_gestor_boton">
+						{% if publicado == 1 %}
+							<a href="../Vista/portada.php?publicado=0">
+								<img src="../Img/Iconos/publicados.svg" alt="Añadir" class="icono">
+									Sin publicar
+							</a>
+						{% else %}	
+							<a href="../Vista/portada.php?publicado=1">
+								<img src="../Img/Iconos/publicados.svg" alt="Añadir" class="icono">
+									Publicados
+							</a>
+						{% endif %}
+
+
+					</div>
+				</div>
+			{% endif %}
+
+
+			{% for cient in cientifico %}
+				{% if cient['publicado'] == 1 and publicado == 1%}
+					<div class="cientifico">
+						<a href="../Vista/cientificos.php?cientifico={{ cient.id }}"><img src='{{ cient.foto }}' class='foto_cientifico' /></a>
+						<h2><br> {{ cient.nombre }} </h2>
+					</div>
+				{% elseif cient['publicado'] == 0 and publicado == 0 %}
+					<div class="cientifico">
+						<a href="../Vista/cientificos.php?cientifico={{ cient.id }}"><img src='{{ cient.foto }}' class='foto_cientifico' /></a>
+						<h2><br> {{ cient.nombre }} </h2>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+
+	{{ parent() }}
+		
+{% endblock %}
