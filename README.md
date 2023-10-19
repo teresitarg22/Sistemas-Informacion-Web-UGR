@@ -10,3 +10,5 @@ Práctica final de Sistemas de Información Basados en Web de 3º de carrera de 
 - Uso de AJAX.
 - Sección de comentarios independiente para cada científico.
 - Sección de "científicos no publicados" solo visible para los roles con permisos.
+
+- :page_with_curl: [Documentación](Documentación/Documentación.pdf)
